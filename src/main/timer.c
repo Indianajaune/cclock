@@ -10,12 +10,38 @@ void stop(int sig){
     exit(3);
 }
 
-int main(void)
+void main(void)
 {
     signal(SIGUSR1, stop);
-    for(;;)
+
+
+    int h,m,s;
+
+    printf("\n\n*******Format du compte a rebours : HH : MM : SS*******\n\n");
+    printf("Entrer le temps du compte a rebours : \n");
+    printf("Heures : ");
+    scanf("%d", &h);
+    printf("\nMinutes : ");
+    scanf("%d", &m);
+    printf("\nSecondes : ");
+    scanf("%d", &s);
+    while(h>=0)
     {
-        sleep(1);
+        while(m>=0)
+        {
+            while(s>=0)
+            {
+                system("clear");
+                printf("\n%02d : %02d : %02d\n",h,m,s);
+                sleep(1);
+                s--;
+            }
+            s=59;
+            m--;
+        }
+        m=59;
+        h--;
     }
+
 }
 
