@@ -8,6 +8,7 @@
 #include <ctype.h>
 #include <limits.h>
 
+
 #define MAX 64
 
 
@@ -19,13 +20,13 @@ int main(void)
     char * argv[2];
 
 
-        printf("        ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄     ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄   ▄\n");
+        printf("\x1B[34m        ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄     ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄   ▄\n");
         printf("       █       █       █   █   █       █       █   █ █ █\n");
         printf("       █       █       █   █   █   ▄   █       █   █▄█ █\n");
         printf("       █     ▄▄█     ▄▄█   █   █  █ █  █     ▄▄█      ▄█\n");
         printf("       █    █  █    █  █   █▄▄▄█  █▄█  █    █  █     █▄\n");
         printf("       █    █▄▄█    █▄▄█       █       █    █▄▄█    ▄  █\n");
-        printf("       █▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄▄▄█ █▄█\n \n \n");
+        printf("       █▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄▄▄█ █▄█\n \n \x1B[37m \n");
 
 do{
 char menu = ' ' ;
@@ -43,7 +44,7 @@ switch(menu)
                 if(index[N-1] == 0){
                     argv[0]="alarm";
                     argv[1]=NULL;
-                    execv("alarm",argv);
+                    execvp("alarm",argv);
                 }
                 printf("alarm clock opened in another window \n") ;
         break ;
@@ -55,7 +56,7 @@ switch(menu)
                 if(index[N-1] == 0){
                     argv[0]="chronometer";
                     argv[1]=NULL;
-                    execv("chronometer",argv);
+                    execvp("chronometer",argv);
                 }
                 printf("chronometer opened in another window \n") ;
         break ;
@@ -67,7 +68,7 @@ switch(menu)
                 if(index[N-1] == 0){
                     argv[0]="timer";
                     argv[1]=NULL;
-                    execv("timer",argv);
+                    execvp("timer",argv);
                 }
                 printf("timer opened in another window \n") ;
         break ;
@@ -79,7 +80,7 @@ switch(menu)
                 if(index[N-1] == 0){
                     argv[0]="statistics";
                     argv[1]=NULL;
-                    execv("statistics",argv);
+                    execvp("statistics",argv);
                 }
                 printf("statistics opened in another window \n") ;
         break ;
@@ -91,7 +92,7 @@ switch(menu)
                 if(index[N-1] == 0){
                     argv[0]="monitor";
                     argv[1]=NULL;
-                    execv("monitor",argv);
+                    execvp("monitor",argv);
                 }
                 printf("monitoring opened in another window \n") ;
         break ;

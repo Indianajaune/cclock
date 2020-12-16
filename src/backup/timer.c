@@ -4,14 +4,13 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <signal.h>
-#include <time.h>
 
 void stop(int sig){
     printf("CHILD : Stopped by parent with signal %d\n",sig);
     exit(3);
 }
 
-int main(void)
+void main(void)
 {
     signal(SIGUSR1, stop);
 
@@ -43,6 +42,6 @@ int main(void)
         m=59;
         h--;
     }
-    return(0);
+
 }
 
