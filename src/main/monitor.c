@@ -10,12 +10,17 @@ void stop(int sig){
     exit(3);
 }
 
-int main(void)
+int monitor()
 {
-    signal(SIGUSR1, stop);
-    for(;;)
+
+    const char * top = "vmstat 2";
+    int cr = system(top);
+
+    if(cr != 0)
     {
-        sleep(1);
+        fprintf( stderr, "Impossible de lancer la commande : %s\n", top );
     }
+
+    return 0;
 }
 

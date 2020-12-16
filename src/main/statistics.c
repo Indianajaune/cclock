@@ -10,12 +10,13 @@ void stop(int sig){
     exit(3);
 }
 
-int main(void)
+
+void main (void)
 {
+
     signal(SIGUSR1, stop);
-    for(;;)
-    {
-        sleep(1);
-    }
+    
+    system("free -a");
+    
 }
 
