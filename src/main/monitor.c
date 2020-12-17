@@ -10,10 +10,10 @@ void stop(int sig){
     exit(3);
 }
 
-int monitor()
+int main()
 {
 
-    const char * top = "vmstat 2";
+    const char * top = "top";
     int cr = system(top);
 
     if(cr != 0)

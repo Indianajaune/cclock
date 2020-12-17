@@ -7,16 +7,32 @@
 
 void stop(int sig){
     printf("CHILD : Stopped by parent with signal %d\n",sig);
-    exit(3);
+    exit(4);
 }
 
 
-void main (void)
+int main (void)
 {
 
+    FILE *data;
+
+    unsigned short int nb;
+
+    if ((data = fopen("data.txt","r")) == NULL){
+
+        printf("Error! opening file");
+ 
+
+
+        exit(1);
+    }
+    fscanf(data,"%hu", &nb);
+    printf("Launches : %hu ", nb);
+    fclose(data);
+    
     signal(SIGUSR1, stop);
     
-    system("free -a");
+    return(0);
     
 }
 

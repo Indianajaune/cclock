@@ -8,7 +8,7 @@
 
 void stop(int sig){
     printf("CHILD : Stopped by parent with signal %d\n",sig);
-    exit(3);
+    exit(5);
 }
 
 int main(void)

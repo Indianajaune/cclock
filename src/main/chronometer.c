@@ -9,7 +9,7 @@
 void stop(int sig)
 {
     printf("CHILD : Stopped by parent with signal %d\n",sig);
-    exit(3);
+    exit(2);
 }
 
 int main(void)
